@@ -33,7 +33,7 @@ const Popup = () => {
   return (
     <React.Fragment>
       <Nav>
-        <Heading>OpenAI Djinni Apply</Heading>
+        <Heading>OpenAI dou.ua Apply</Heading>
       </Nav>
       <Main>
         <label>

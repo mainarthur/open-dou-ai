@@ -1,8 +1,6 @@
 import { EXPERIENCE_KEY, OPEN_AI_KEY, SKILLS_LIST_KEY } from "../constants";
 
-const allApplyButtons = document.querySelectorAll(
-  ".js-inbox-toggle-reply-form"
-);
+const allApplyButtons = document.querySelectorAll("a#reply-btn-id");
 
 const applyButton = allApplyButtons[
   allApplyButtons.length - 1
@@ -15,7 +13,7 @@ applyButton.addEventListener("click", () => {
 
   setTimeout(async () => {
     const textarea = document.querySelector(
-      "textarea.form-control[name=message]"
+      "textarea#reply_descr"
     ) as HTMLTextAreaElement;
 
     const data = {
@@ -29,11 +27,8 @@ applyButton.addEventListener("click", () => {
             ", my experience:" +
             (await get(EXPERIENCE_KEY)) +
             " generate me a personalized apply message for a vacancy: " +
-            (
-              document.querySelector(
-                ".row .row-mobile-order-2"
-              ) as HTMLDivElement
-            ).innerText,
+            (document.querySelector("div.vacancy-section") as HTMLDivElement)
+              .innerText,
         },
       ],
     };
